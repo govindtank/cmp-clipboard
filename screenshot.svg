@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" width="390" height="844">
+  <defs>
+    <linearGradient id="statusGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E3F2FD"/>
+      <stop offset="100%" stop-color="#F5F5F5"/>
+    </linearGradient>
+    <linearGradient id="btnPrimary" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#42A5F5"/>
+      <stop offset="100%" stop-color="#1E88E5"/>
+    </linearGradient>
+    <linearGradient id="btnSecondary" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#66BB6A"/>
+      <stop offset="100%" stop-color="#43A047"/>
+    </linearGradient>
+    <linearGradient id="btnTertiary" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#AB47BC"/>
+      <stop offset="100%" stop-color="#8E24AA"/>
+    </linearGradient>
+    <filter id="shadow1" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+    <filter id="phoneShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Phone body shadow -->
+  <rect x="25" y="12" rx="48" ry="48" width="340" height="820" fill="none" filter="url(#phoneShadow)"/>
+
+  <!-- Phone body -->
+  <rect x="25" y="12" rx="48" ry="48" width="340" height="820" fill="#1C1C1E" stroke="#3A3A3C" stroke-width="2"/>
+
+  <!-- Screen -->
+  <rect x="33" y="20" rx="42" ry="42" width="324" height="804" fill="url(#bgGrad)"/>
+
+  <!-- Notch -->
+  <rect x="165" y="24" rx="14" ry="14" width="60" height="22" fill="#1C1C1E"/>
+
+  <!-- Status bar -->
+  <rect x="33" y="20" rx="42" ry="42" width="324" height="44" fill="url(#statusGrad)" opacity="0.95"/>
+  <text x="58" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#fff" font-weight="600">9:41</text>
+  <text x="320" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#fff" text-anchor="end">📶 🔋 85%</text>
+
+  <!-- Header area -->
+  <rect x="33" y="64" width="324" height="56" fill="#fff"/>
+  <text x="195" y="98" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#1565C0" font-weight="700" text-anchor="middle">cmp-clipboard</text>
+
+  <!-- Card: input area -->
+  <rect x="48" y="136" width="294" height="120" rx="12" ry="12" fill="#fff" filter="url(#shadow1)"/>
+  <rect x="48" y="136" width="294" height="120" rx="12" ry="12" fill="#fff"/>
+  <text x="68" y="168" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#9E9E9E" font-weight="500">INPUT</text>
+  <rect x="68" y="178" width="254" height="36" rx="8" ry="8" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="82" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#BDBDBD">Type something...</text>
+
+  <!-- Clipboard icon indicator -->
+  <circle cx="330" cy="196" r="12" fill="#E3F2FD"/>
+  <text x="330" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1565C0" text-anchor="middle">📋</text>
+
+  <!-- Card: action buttons -->
+  <rect x="48" y="272" width="294" height="100" rx="12" ry="12" fill="#fff" filter="url(#shadow1)"/>
+  <rect x="48" y="272" width="294" height="100" rx="12" ry="12" fill="#fff"/>
+  <text x="68" y="302" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#9E9E9E" font-weight="500">ACTIONS</text>
+
+  <!-- Button row -->
+  <g filter="url(#shadow1)">
+    <rect x="68" y="314" width="84" height="38" rx="8" ry="8" fill="url(#btnPrimary)"/>
+    <text x="110" y="338" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#fff" font-weight="600" text-anchor="middle">📄 Copy Text</text>
+  </g>
+  <g filter="url(#shadow1)">
+    <rect x="164" y="314" width="84" height="38" rx="8" ry="8" fill="url(#btnSecondary)"/>
+    <text x="206" y="338" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#fff" font-weight="600" text-anchor="middle">📋 Paste Text</text>
+  </g>
+  <g filter="url(#shadow1)">
+    <rect x="260" y="314" width="68" height="38" rx="8" ry="8" fill="url(#btnTertiary)"/>
+    <text x="294" y="338" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#fff" font-weight="600" text-anchor="middle">🖼️ Copy</text>
+  </g>
+
+  <!-- Card: output area -->
+  <rect x="48" y="388" width="294" height="160" rx="12" ry="12" fill="#fff" filter="url(#shadow2)"/>
+  <rect x="48" y="388" width="294" height="160" rx="12" ry="12" fill="#fff"/>
+  <text x="68" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#9E9E9E" font-weight="500">OUTPUT</text>
+
+  <!-- Pasted result header -->
+  <rect x="68" y="432" width="254" height="32" rx="8" ry="8" fill="#E8F5E9"/>
+  <text x="82" y="453" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#2E7D32" font-weight="600">📋 Clipboards</text>
+
+  <!-- Pasted content -->
+  <rect x="68" y="472" width="254" height="56" rx="8" ry="8" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="80" y="480" width="6" height="40" rx="3" ry="3" fill="#42A5F5"/>
+  <text x="100" y="498" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#212121" font-weight="500">Hello from clipboard!</text>
+  <text x="100" y="516" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#9E9E9E">Copied just now · Text</text>
+
+  <!-- Card: quick stats -->
+  <rect x="48" y="564" width="294" height="70" rx="12" ry="12" fill="#fff" filter="url(#shadow1)"/>
+  <rect x="48" y="564" width="294" height="70" rx="12" ry="12" fill="#fff"/>
+
+  <rect x="78" y="582" width="54" height="36" rx="8" ry="8" fill="#E3F2FD"/>
+  <text x="105" y="596" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#1565C0" font-weight="700" text-anchor="middle">3</text>
+  <text x="105" y="610" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#1565C0" text-anchor="middle">copies</text>
+
+  <rect x="142" y="582" width="54" height="36" rx="8" ry="8" fill="#E8F5E9"/>
+  <text x="169" y="596" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#2E7D32" font-weight="700" text-anchor="middle">2</text>
+  <text x="169" y="610" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#2E7D32" text-anchor="middle">pastes</text>
+
+  <rect x="206" y="582" width="54" height="36" rx="8" ry="8" fill="#F3E5F5"/>
+  <text x="233" y="596" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#7B1FA2" font-weight="700" text-anchor="middle">1</text>
+  <text x="233" y="610" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#7B1FA2" text-anchor="middle">image</text>
+
+  <rect x="270" y="582" width="54" height="36" rx="8" ry="8" fill="#FFF3E0"/>
+  <text x="297" y="596" font-family="system-ui, -apple-system, sans-serif" font-size="16" fill="#E65100" font-weight="700" text-anchor="middle">✓</text>
+  <text x="297" y="610" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#E65100" text-anchor="middle">sync</text>
+
+  <!-- Footer -->
+  <rect x="33" y="764" width="324" height="60" fill="#1565C0"/>
+  <text x="195" y="790" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#BBDEFB" font-weight="500" text-anchor="middle">⚡ KMP Unified Clipboard</text>
+  <text x="195" y="808" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#90CAF9" text-anchor="middle">Android · iOS · Compose Multiplatform</text>
+
+  <!-- Home indicator -->
+  <rect x="145" y="800" rx="4" ry="4" width="100" height="5" fill="#1C1C1E" opacity="0.15"/>
+</svg>
