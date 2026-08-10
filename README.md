@@ -1,5 +1,7 @@
 # cmp-clipboard
 
+[![JitPack](https://jitpack.io/v/govindtank/cmp-clipboard.svg)](https://jitpack.io/#govindtank/cmp-clipboard)
+
 ![cmp-clipboard](screenshot.svg)
 
 *Compose MultiPlatform clipboard library for Kotlin — unified clipboard API for Android and iOS.*
@@ -13,22 +15,20 @@
 
 ## Installation
 
-**settings.gradle.kts:**
+Add the JitPack repository and dependency to your `build.gradle.kts`:
+
 ```kotlin
-dependencyResolutionManagement {
-    repositories {
-        google()
-        mavenCentral()
-    }
+repositories {
+    maven { url = uri("https://jitpack.io") }
+}
+
+dependencies {
+    implementation("com.github.govindtank:cmp-clipboard:1.0.0")
 }
 ```
 
-**build.gradle.kts (shared module):**
-```kotlin
-dependencies {
-    implementation("io.github.govindtank:cmp-clipboard:0.1.0")
-}
-```
+> [!IMPORTANT]
+> After tagging a release on GitHub (`git tag v1.0.0 && git push --tags`), JitPack automatically builds and publishes the artifacts. Replace `1.0.0` with your actual tag.
 
 ## Usage
 

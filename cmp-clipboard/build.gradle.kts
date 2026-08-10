@@ -8,14 +8,17 @@ plugins {
 kotlin {
     androidTarget()
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach { iosTarget ->
-        iosTarget.binaries.framework {
-            baseName = "ClipboardKit"
-            isStatic = true
+    val skipIos = project.findProperty("skipIos") == "true"
+    if (!skipIos) {
+        listOf(
+            iosX64(),
+            iosArm64(),
+            iosSimulatorArm64()
+        ).forEach { iosTarget ->
+            iosTarget.binaries.framework {
+                baseName = "ClipboardKit"
+                isStatic = true
+            }
         }
     }
 
