@@ -1,19 +1,35 @@
 # cmp-clipboard
 
-[![JitPack](https://jitpack.io/v/govindtank/cmp-clipboard.svg)](https://jitpack.io/#govindtank/cmp-clipboard)
+<p align="center">
+  <a href="https://jitpack.io/#govindtank/cmp-clipboard"><img src="https://jitpack.io/v/govindtank/cmp-clipboard.svg?style=flat-square" alt="JitPack"></a>
+  <a href="https://github.com/govindtank/cmp-clipboard/actions"><img src="https://img.shields.io/github/actions/workflow/status/govindtank/cmp-clipboard/build.yml?branch=main&style=flat-square&label=build" alt="Build Status"></a>
+  <img src="https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20CMP-blue?style=flat-square" alt="Platform">
+  <img src="https://img.shields.io/badge/Kotlin-2.0.0-purple?style=flat-square" alt="Kotlin">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg?style=flat-square" alt="License"></a>
+  <a href="https://github.com/govindtank"><img src="https://img.shields.io/badge/Author-Govind%20Tank-orange?style=flat-square" alt="Author"></a>
+</p>
 
-![cmp-clipboard](screenshot.svg)
+<p align="center">
+  <b>Compose Multiplatform clipboard library for Kotlin — unified clipboard API for Android and iOS.</b><br>
+  <i>Architected &amp; Crafted with ❤️ by <a href="https://github.com/govindtank">Govind Tank</a></i>
+</p>
 
-*Compose MultiPlatform clipboard library for Kotlin — unified clipboard API for Android and iOS.*
+<p align="center">
+  <img src="./screenshot.svg" width="390" alt="cmp-clipboard demo" style="border-radius: 14px;" />
+</p>
 
-## Features
+---
 
-- **Unified API** — single `ClipboardManager` interface works on both platforms
-- **Text clipboard** — `readText()` / `writeText(text)` for plain text
-- **Image clipboard** — `readImage()` / `writeImage(image)` (returns `null` on platforms without image clipboard support)
-- **Composable** — `rememberClipboardManager()` hook for Compose Multiplatform UI
+## ⚡ Features
 
-## Installation
+- 📱 **Unified API** — single `ClipboardManager` interface works seamlessly on Android and iOS.
+- 📝 **Text Clipboard** — `readText()` / `writeText(text)` for plain text manipulation.
+- 🖼️ **Image Clipboard** — `readImage()` / `writeImage(image)` for rich visual clipboard payloads.
+- 🎨 **Composable** — `rememberClipboardManager()` hook for Compose Multiplatform UI.
+
+---
+
+## 📦 Installation
 
 Add the JitPack repository and dependency to your `build.gradle.kts`:
 
@@ -27,85 +43,72 @@ dependencies {
 }
 ```
 
-> [!IMPORTANT]
-> After tagging a release on GitHub (`git tag v1.0.0 && git push --tags`), JitPack automatically builds and publishes the artifacts. Replace `1.0.0` with your actual tag.
+---
 
-## Usage
+## 🚀 Usage
 
 ```kotlin
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import io.github.govindtank.clipboard.rememberClipboardManager
 
 @Composable
-fun App() {
+fun ClipboardDemoScreen() {
     val clipboard = rememberClipboardManager()
+    var pastedText by remember { mutableStateOf("") }
     
-    // Copy
-    Button(onClick = { clipboard.writeText("Hello!") }) {
-        Text("Copy")
+    Button(onClick = { clipboard.writeText("Hello from Compose Multiplatform!") }) {
+        Text("Copy to Clipboard")
     }
     
-    // Paste  
-    val text = clipboard.readText() ?: "(empty)"
-    Text("Pasted: $text")
+    Button(onClick = { 
+        pastedText = clipboard.readText() ?: "(Clipboard is empty)" 
+    }) {
+        Text("Paste from Clipboard")
+    }
+
+    Text("Current Clipboard: $pastedText")
 }
 ```
 
-## API Reference
+---
 
-### `rememberClipboardManager()`
-```kotlin
-@Composable
-fun rememberClipboardManager(): ClipboardManager
-```
-Composable that creates and remembers a `ClipboardManager` instance scoped to the composition lifecycle.
+## 📱 Platform Implementation Details
 
-### `ClipboardManager` methods
+| Platform | Underlying API | Notes |
+| :--- | :--- | :--- |
+| **Android** | `android.content.ClipboardManager` | Initialized with `clipboardInit(context)` |
+| **iOS** | `platform.UIKit.UIPasteboard` | Works out of the box without context |
 
-| Method | Returns | Description |
-|--------|---------|-------------|
-| `readText()` | `String?` | Read plain text from system clipboard. Returns `null` when clipboard is empty or contains non-text data. |
-| `writeText(text: String)` | `Unit` | Write plain text to system clipboard. Replaces any previous content. |
-| `readImage()` | `ImageBitmap?` | Read an image from system clipboard. Returns `null` when no image available or platform lacks image clipboard support. |
-| `writeImage(image: ImageBitmap)` | `Unit` | Write an image bitmap to system clipboard. |
+---
 
-### Platform expect functions
+## 💖 Support & Sponsorship
 
-```kotlin
-expect fun clipboardInit(context: Any? = null)
-expect fun clipboardReadText(): String?
-expect fun clipboardWriteText(text: String)
-expect fun clipboardReadImage(): ImageBitmap?
-expect fun clipboardWriteImage(image: ImageBitmap)
-```
+If you find this library helpful for your Compose Multiplatform applications, consider supporting continuous development:
 
-## Platform Notes
+<p align="left">
+  <a href="https://www.patreon.com/govindtank"><img src="https://img.shields.io/badge/Patreon-Support%20Creator-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon"></a>
+  <a href="https://github.com/sponsors/govindtank"><img src="https://img.shields.io/badge/GitHub%20Sponsors-Sponsor-EA4AAA?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Sponsors"></a>
+  <a href="https://buymeacoffee.com/govindtank"><img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee"></a>
+</p>
 
-### Android
+- **Patreon**: [patreon.com/govindtank](https://www.patreon.com/govindtank)
+- **GitHub Sponsors**: [github.com/sponsors/govindtank](https://github.com/sponsors/govindtank)
+- **Buy Me a Coffee**: [buymeacoffee.com/govindtank](https://buymeacoffee.com/govindtank)
 
-Requires `clipboardInit(context)` before first clipboard use. Call it once in a `LaunchedEffect` or `DisposableEffect`:
+Your sponsorship fuels new features, bug fixes, and continuous KMP multiplatform library releases!
 
-```kotlin
-val context = LocalContext.current
-val clipboard = rememberClipboardManager()
+---
 
-LaunchedEffect(Unit) {
-    clipboardInit(context)
-}
-```
+## 👨💻 Author
 
-`context` should be the Android `Context` (typically from `LocalContext.current`). No extra permissions needed for clipboard access on Android.
+**Govind Tank**
+- **GitHub**: [@govindtank](https://github.com/govindtank)
+- **Website**: [govindtank.github.io](https://govindtank.github.io)
+- **LinkedIn**: [linkedin.com/in/govind-tank](https://linkedin.com/in/govind-tank)
 
-### iOS
+---
 
-No initialization needed. `clipboardInit()` is a no-op on iOS. The library uses `UIPasteboard.general` directly — no entitlements or capabilities required.
+## 📄 License
 
-## Requirements
-
-- Kotlin 2.0.0+
-- Compose Multiplatform 1.6.10+
-- Android `minSdk` 21+
-- iOS 12+
-
-## License
-
-MIT
+Apache License 2.0
